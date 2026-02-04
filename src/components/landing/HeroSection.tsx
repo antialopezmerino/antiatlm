@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import personalPhoto from "@/assets/personal-photo.png";
 
 const HeroSection = () => {
   const whatsappLink = "https://wa.me/51941926985";
@@ -44,8 +45,8 @@ const HeroSection = () => {
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-secondary">
                 <img
-                  src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&h=1000&fit=crop&crop=faces"
-                  alt="Mujer serena disfrutando de un momento de calma y bienestar natural"
+                  src={personalPhoto}
+                  alt="Foto personal lifestyle"
                   className="w-full h-full object-cover"
                 />
               </div>

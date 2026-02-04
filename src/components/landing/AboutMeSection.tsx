@@ -1,3 +1,5 @@
+import personalPhoto from "@/assets/personal-photo.png";
+
 const AboutMeSection = () => {
   return (
     <section className="py-20 md:py-28 bg-dusty-pink/30">
@@ -8,8 +10,8 @@ const AboutMeSection = () => {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-background shadow-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=faces"
-                  alt="Foto personal - Tu nombre"
+                  src={personalPhoto}
+                  alt="Foto personal"
                   className="w-full h-full object-cover"
                 />
               </div>
