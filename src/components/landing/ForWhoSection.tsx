@@ -13,7 +13,7 @@ const notForYou = [
   "No te interesa aprender sobre los productos",
   "Prefieres la venta presencial tradicional",
   "No tienes tiempo para dedicar al proyecto",
-  "No te sientes cómoda en redes sociales",
+  "No te sientes cómoda recomendando",
 ];
 
 const ForWhoSection = () => {
