@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 
 const HeroSection = () => {
-  const whatsappLink = "https://wa.me/51XXXXXXXXX"; // Configurar número
+  const whatsappLink = "https://wa.me/51941926985";
 
   return (
     <section className="min-h-screen bg-background flex items-center">
