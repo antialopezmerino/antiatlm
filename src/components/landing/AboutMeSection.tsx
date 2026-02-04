@@ -12,7 +12,7 @@ const AboutMeSection = () => {
                 <img
                   src={personalPhoto}
                   alt="Foto personal"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
               {/* Decorative element */}
