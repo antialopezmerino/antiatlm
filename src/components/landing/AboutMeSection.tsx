@@ -26,26 +26,43 @@ const AboutMeSection = () => {
               Sobre mí
             </h2>
             
-            <div className="space-y-4 text-foreground/80 font-light leading-relaxed">
+            <div className="space-y-5 text-foreground/80 font-light leading-relaxed">
               <p>
-                Hola, soy <span className="font-medium text-foreground">[Tu nombre]</span>.
+                Hola, soy <span className="font-medium text-foreground">Antía</span>.
               </p>
               
               <p>
-                Después de años buscando una forma de trabajar que respetara mi tiempo 
-                y mis valores, encontré en Ringana un proyecto que encajaba con lo que 
-                quería: productos reales, un modelo honesto y la libertad de construir 
-                algo propio.
+                Soy ingeniera de formación, madre, y he vivido en distintos países 
+                —algo que ha moldeado mi forma de entender a las personas y sus procesos.
+              </p>
+
+              <p>
+                A lo largo de mi camino profesional descubrí que lo que realmente me 
+                movía no era solo resolver problemas técnicos, sino acompañar a otros 
+                en su crecimiento.
               </p>
               
               <p>
-                No vengo del mundo de las ventas. Vengo de querer algo diferente. 
-                Y si estás aquí, probablemente tú también.
+                Encontré en la educación un trabajo con propósito, desde donde disfruto 
+                ayudando a personas y familias a tomar decisiones conscientes y a 
+                desarrollar su máximo potencial.
               </p>
-              
-              <p className="text-foreground font-normal pt-2">
-                Me encantará contarte más si sientes que esto puede ser para ti.
+
+              <p className="text-foreground/70 italic">
+                Me gusta trabajar desde lo práctico, lo honesto y lo humano, con la 
+                convicción de que cada persona tiene su propio ritmo y su propio camino.
               </p>
+
+              <div className="pt-3 border-t border-foreground/10">
+                <p>
+                  No vengo del mundo de las ventas. Vengo de querer algo diferente. 
+                  Y si estás aquí, probablemente tú también.
+                </p>
+                
+                <p className="text-foreground font-normal pt-3">
+                  Me encantará contarte más si sientes que esto puede ser para ti.
+                </p>
+              </div>
             </div>
           </div>
         </div>
