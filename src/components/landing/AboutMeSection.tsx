@@ -38,9 +38,7 @@ const AboutMeSection = () => {
               <p>Encontré en la educación un trabajo con propósito, desde donde disfruto ayudando a las personas a desarrollar su máximo potencial. </p>
 
               <p className="text-foreground/70 italic">
-                Me gusta trabajar desde lo práctico, lo honesto y lo humano, con la 
-                convicción de que cada persona tiene su propio ritmo y su propio camino.
-              </p>
+            </p>
 
               <div className="pt-3 border-t border-foreground/10">
                 <p>
