@@ -1,12 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import personalPhoto from "@/assets/personal-photo.png";
-
 const HeroSection = () => {
   const whatsappLink = "https://wa.me/51941926985";
-
-  return (
-    <section className="min-h-screen bg-background flex items-center">
+  return <section className="min-h-screen bg-background flex items-center">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Text Content */}
@@ -18,17 +15,11 @@ const HeroSection = () => {
               <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
                 Bienestar europeo, productos naturales y un proyecto flexible que ahora abre mercado en el país.
               </p>
-              <p className="text-sm text-muted-foreground tracking-wide">
-                100 % online · Sin stock · Sin compras obligatorias
-              </p>
+              <p className="text-sm text-muted-foreground tracking-wide">100% online · Sin stock · Sin compras obligatorias</p>
             </div>
 
             <div className="space-y-3">
-              <Button
-                asChild
-                size="lg"
-                className="bg-olive text-olive-foreground hover:bg-olive/90 rounded-full px-8 py-6 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300"
-              >
+              <Button asChild size="lg" className="bg-olive text-olive-foreground hover:bg-olive/90 rounded-full px-8 py-6 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300">
                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Habla conmigo por WhatsApp
@@ -44,11 +35,7 @@ const HeroSection = () => {
           <div className="order-1 lg:order-2">
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-secondary">
-                <img
-                  src={personalPhoto}
-                  alt="Foto personal lifestyle"
-                  className="w-full h-full object-cover"
-                />
+                <img src={personalPhoto} alt="Foto personal lifestyle" className="w-full h-full object-cover" />
               </div>
               {/* Subtle decorative element */}
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-dusty-pink/30 rounded-full blur-3xl -z-10" />
@@ -57,8 +44,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
