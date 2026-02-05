@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
-import personalPhoto from "@/assets/personal-photo.png";
+import heroPhoto from "@/assets/hero-photo.jpeg";
 const HeroSection = () => {
   const whatsappLink = "https://wa.me/51941926985";
   return <section className="min-h-screen bg-background flex items-center">
@@ -35,7 +35,7 @@ const HeroSection = () => {
           <div className="order-1 lg:order-2">
             <div className="relative">
               <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-secondary">
-                <img src={personalPhoto} alt="Foto personal lifestyle" className="w-full h-full object-cover" />
+                <img src={heroPhoto} alt="Foto personal lifestyle" className="w-full h-full object-cover" />
               </div>
               {/* Subtle decorative element */}
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-dusty-pink/30 rounded-full blur-3xl -z-10" />
