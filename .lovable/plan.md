@@ -1,78 +1,62 @@
 
 
-## Landing Page: Ringana Perú
+# Plan para arreglar el despliegue en GitHub Pages
 
-Una página de aterrizaje elegante, minimalista y premium diseñada para conectar con mujeres emprendedoras en Perú que buscan flexibilidad y bienestar natural.
+## Problema encontrado
 
----
+El archivo `package.json` tiene un **error de formato JSON** que impide que el proyecto se compile. En la **linea 15**, falta una coma:
 
-### 🎨 Paleta de Colores
-- **Fondo principal:** Blanco #FFFFFF
-- **Acento principal:** Verde oliva #6F8442
-- **Fondo alternativo:** Beige #F5F1EC
-- **Acento secundario:** Rosa empolvado #E7A6B3
-- **Textos:** Negro suave y gris oscuro
+```text
+Actual (roto):
+  "homepage": "https://antialopezmerino.github.io/antiatlm"
+  "dependencies": {
 
----
+Correcto:
+  "homepage": "https://antialopezmerino.github.io/antiatlm",
+  "dependencies": {
+```
 
-### Bloque 1 · Hero
-Imagen lifestyle a un lado (mujer en ambiente sereno, luz natural) con el título principal, subtítulo y botón de WhatsApp. Transmite calma y profesionalismo desde el primer momento.
+Sin esa coma, ni Lovable ni GitHub Actions pueden instalar las dependencias ni compilar el proyecto. Por eso la pagina sale en blanco.
 
----
+## Pasos para solucionarlo
 
-### Bloque 2 · ¿Qué es Ringana?
-Sección editorial centrada con texto elegante explicando qué es Ringana: cosméticos frescos europeos, filosofía de sostenibilidad, y por qué llega a Perú ahora. Sin imágenes, solo tipografía cuidada.
+### Paso 1: Corregir el package.json (lo hago yo)
+- Agregar la coma faltante en la linea 15 despues de la URL del homepage.
 
----
+### Paso 2: Limpiar workflows duplicados (lo hago yo)
+- Actualmente hay dos archivos de workflow en `.github/workflows/`:
+  - `deploy.yml` - hace build con npm y despliega (este es el correcto)
+  - `pages.yml` - intenta desplegar los archivos fuente sin compilar (este causa problemas)
+- Eliminar `pages.yml` y mantener solo `deploy.yml`.
 
-### Bloque 3 · ¿Cómo funciona?
-Tres columnas con iconos lineales blancos sobre fondo verde oliva:
-- **Regístrate gratis** — Sin inversión inicial
-- **Comparte lo que usas** — Con tu enlace personal  
-- **Genera ingresos** — Desde cualquier lugar
+### Paso 3: Configuracion en GitHub (lo haces tu)
+Una vez que los cambios se sincronicen con GitHub, necesitas verificar esta configuracion:
 
----
+1. Ve a tu repositorio en GitHub: `github.com/antialopezmerino/antiatlm`
+2. Haz clic en **Settings** (Configuracion)
+3. En el menu lateral, haz clic en **Pages**
+4. En **"Build and deployment"**, cambia **Source** a **"GitHub Actions"**
+5. Ve a la pestana **Actions** y verifica que el workflow "Deploy to GitHub Pages" se ejecute correctamente
 
-### Bloque 4 · ¿Qué ofrece este proyecto?
-Lista con checks verdes sobre fondo beige premium:
-- 100% online, sin reuniones presenciales
-- Sin stock ni productos en casa
-- Sin cuotas ni compras obligatorias
-- Formación y acompañamiento incluidos
-- Flexibilidad total de horarios
-
----
-
-### Bloque 5 · ¿Para quién es / Para quién no?
-Dos columnas comparativas:
-- **Sí es para ti** (verde oliva): Buscas ingresos extra, te gusta lo natural, quieres libertad...
-- **No es para ti** (gris suave): Buscas dinero rápido, no te interesa aprender, prefieres vender presencialmente...
+## Resultado esperado
+- El proyecto compilara sin errores
+- GitHub Actions ejecutara `npm run build` automaticamente
+- Los archivos compilados (HTML, CSS, JS estaticos) se desplegaran en GitHub Pages
+- Tu pagina `https://antialopezmerino.github.io/antiatlm/` mostrara el contenido correctamente
 
 ---
 
-### Bloque 6 · Sobre mí
-Tu foto personal sobre fondo rosa empolvado suave, con texto breve y humano presentándote. Plantilla que podrás personalizar con tu historia real.
+## Detalles tecnicos
 
----
+### Correccion en package.json
+Linea 15: agregar `,` despues del valor de "homepage"
 
-### Bloque 7 · CTA Final
-Llamada a la acción limpia y directa:
-> "Si te genera curiosidad y quieres saber si esto puede encajar contigo:"
-> 
-> **[Escríbeme por WhatsApp]**
-> 
-> *Te respondo yo misma. Sin presión ni compromiso.*
+### Eliminacion de workflow conflictivo
+El archivo `.github/workflows/pages.yml` sube la raiz del proyecto (archivos fuente React) directamente a Pages sin compilar, lo cual produce una pagina en blanco. Se eliminara para evitar conflictos con el workflow correcto (`deploy.yml`).
 
----
-
-### Bloque 8 · Disclaimer
-Texto pequeño en gris claro indicando que es una web informativa personal.
-
----
-
-### Características Técnicas
-- **100% responsive** — Se ve perfecto en móvil y escritorio
-- **Botones de WhatsApp** — Listos para configurar con tu número
-- **Imágenes placeholder** — De alta calidad, reemplazables fácilmente
-- **Textos editables** — Podrás personalizar todo el contenido
+### Workflow correcto (deploy.yml)
+El workflow existente en `deploy.yml` ya hace lo necesario:
+1. Instala dependencias con `npm ci`
+2. Ejecuta `npm run build` (genera archivos estaticos en `dist/`)
+3. Sube y despliega la carpeta `dist/` en GitHub Pages
 
