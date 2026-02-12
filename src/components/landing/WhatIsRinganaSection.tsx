@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const WhatIsRinganaSection = () => {
   return (
     <section className="py-24 md:py-32 bg-background">
@@ -29,6 +31,17 @@ const WhatIsRinganaSection = () => {
             <p className="text-foreground font-normal pt-4">
               Ahora, por primera vez, este modelo de bienestar europeo abre sus puertas en Perú.
             </p>
+
+            <div className="pt-6 space-y-2">
+              <Button asChild variant="outline" className="rounded-full px-8 py-5 text-base font-medium border-olive text-olive hover:bg-olive hover:text-olive-foreground transition-all duration-300">
+                <a href="https://antia.ringana.com.co/" target="_blank" rel="noopener noreferrer">
+                  Conoce más de los productos aquí
+                </a>
+              </Button>
+              <p className="text-sm text-olive font-medium">
+                Obtén 80 soles de descuento en tu primera compra
+              </p>
+            </div>
           </div>
         </div>
       </div>
